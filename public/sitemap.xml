@@ -33,13 +33,23 @@
   </url>
   
   <url>
-    <loc>/post/launch-of-gyninfo/</loc>
-    <lastmod>2020-07-01T16:45:00+02:00</lastmod>
+    <loc>/post/aim/</loc>
+    <lastmod>2020-07-08T15:40:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-07-08T15:40:16+02:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-07-01T16:45:00+02:00</lastmod>
+    <lastmod>2020-07-08T15:40:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/%C3%B8jvind-lidegaard/</loc>
+    <lastmod>2020-07-08T15:40:16+02:00</lastmod>
   </url>
   
   <url>
@@ -59,11 +69,6 @@
   
   <url>
     <loc>/publication/preprint/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -158,6 +163,10 @@
   </url>
   
   <url>
+    <loc>/home/</loc>
+  </url>
+  
+  <url>
     <loc>/author/anders-mikkelsen/</loc>
   </url>
   
@@ -166,11 +175,11 @@
   </url>
   
   <url>
-    <loc>/author/steen-rasmussen/</loc>
+    <loc>/author/post/</loc>
   </url>
   
   <url>
-    <loc>/author/%C3%B8jvind-lidegaard/</loc>
+    <loc>/author/steen-rasmussen/</loc>
   </url>
   
 </urlset>

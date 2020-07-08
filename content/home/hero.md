@@ -52,7 +52,6 @@ weight = 5  # Order that this section will appear.
 +++
 
 **Site under construction**  
-Research group based at the Department of Gynaecology & Obsterics, University Hospital of Copenhagen, Rigshospitalet
 </br>
 </br>
 </br>
