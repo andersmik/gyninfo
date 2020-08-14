@@ -1,0 +1,290 @@
+---
+title: "Flowcharts"
+author: "Anders Mikkelsen"
+authors: [ami]
+date: '2020-08-14'
+slug: 'Flowcharts using DOT/graphViz/DiagrammeR'
+categories: [R, DiagrammeR, graphViz, DOT]
+tags: [R, DiagrammeR, graphViz, DOT]
+summary: 'Flocharts in R uding DOT/graphViz/Diagrammer'
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(DiagrammeR)
+```
+
+# Personal research subjects
+
+```{r, echo=FALSE}
+indhold <- c("AM", "Cardiology/AF", "Ob/gyn", "PhD: Pregnancy loss and long term health", "Fetal sex and VTE", "The Pill and Autoimmune Disease", "CPA and benign tumors", "CIP and VTE")
+
+grViz("
+digraph {
+  graph [layout=circo]
+  
+  node [shape = circle,
+        fontname = Helvetica,
+        style = filled]
+        
+a [label = '@@1-1', fillcolor = lightcyan]
+b [label = '@@1-2', fillcolor = azure]
+c [label = '@@1-3', fillcolor = linen]
+d [label = '@@1-4', fillcolor = mintcream]
+e [label = '@@1-5', fillcolor = honeydew]
+f [label = '@@1-6', fillcolor = ivory]
+g [label = '@@1-7', fillcolor = snow]
+h [label = '@@1-8', fillcolor = oldlace]
+  a->b->c->d->{e f g h}
+}
+[1]: indhold[1:8]
+
+")
+```
+
+
+# Flowcharts  
+Flowcharts are used extensively in almost all medical research.  
+
+```{r, echo=FALSE}
+indhold <- c("Flowcharts", "Inclusion/exlusion criteria", "DAGs", "Qualitative research setup", "Network analysis", "Clinical trial setup", "Explaining physiology")
+
+grViz("
+digraph {
+  graph [layout=circo]
+  
+  node [shape = circle,
+        fontname = Helvetica,
+        style = filled]
+        
+  node [fillcolor = honeydew, fixedsize=TRUE, width=2.5]
+a [label = '@@1-1']
+
+  node [fillcolor = ivory, fixedsize=TRUE, width=2.5]
+b [label = '@@1-2']
+c [label = '@@1-3']
+d [label = '@@1-4']
+e [label = '@@1-5']
+f [label = '@@1-6']
+g [label = '@@1-7']
+  a->{b c d e f g}
+}
+[1]: indhold[1:7]
+
+")
+
+```
+*Figure 1. Examples of flowcharts in medical research. Circo layout.* 
+
+# Why program a figure?  
+
+## Upsides  
+
+- Figures generated and updated inside your program  
+- Vector based  
+- Open-source  
+- Reproducibility 
+- Copy paste
+
+## Downsides  
+
+- Steeper learning curve than "point-and-click"  
+- Time-consuming for special circumstances  
+
+# Using the DiagrammeR package  
+
+## Syntax  
+Based on DOT programming language and graphViz engine for rendering. Almost 30 years old, but still updated. `DiagrammeR` package allows DOT programming and graphViz rendering inside R environment.  
+
+Central to using the `DiagrammeR` package in R is the `grViz()` statement. This function expects 3 statements:   
+1. graph statement (optional)  
+2. node statement   
+3. edge statement   
+
+## Simple example
+```{r}
+grViz("
+      digraph{
+      
+      # graph statement
+      graph [layout = dot]
+      
+      #node statement
+      node [shape = box, fixedsize=true, style=filled, fillcolor=honeydew, fontname=helvetica]
+      A; B; C; D; E; F; G
+      
+      #edge statement
+      A->{B C D E F G}
+      }
+")
+```
+*Figure 2. Simple example. DOT layout.* 
+
+## Layout  
+For now, focus on two types
+1. dot (hierarchical)  
+2. circo (circular)
+More exist
+
+## Integration with existing prgoramming
+In R integration is done using footnotes and @@ operator. 
+
+## Example
+
+```{r}
+a <- LETTERS
+
+grViz(diagram = "
+      digraph{
+      
+      # graph statement
+      graph [layout=circo]
+      
+      # node statements
+      node[shape=circle, style=filled, fillcolor=honeydew]
+      A [label = '@@1-1']
+      B [label = '@@1-2']
+      C [label = '@@1-3']
+      D [label = '@@1-4']
+      E [label = '@@1-5']
+      F [label = '@@1-6']
+      G [label = '@@1-7']
+      
+      node[shape=box, style=filled, fillcolor=lightblue]
+      H [label = '@@1-8']
+      I [label = '@@1-9']
+      J [label = '@@1-10']
+      K [label = '@@1-11']
+      L [label = '@@1-12']
+      M [label = '@@1-13']
+      N [label = '@@1-14']
+
+      # edge statements
+      {A B C}->{H I J K N} 
+      G->{L M N}
+
+      }
+      [1]: LETTERS[1:14]
+      ")
+
+
+```
+
+# Flowchart example  
+
+```{r}
+# Body of nodes in flowchart. \n indicates new line
+set.seed(1)
+cohort <- data.frame("pnr"=1:1000, "pre_cancer"=rbinom(1000, 1, 0.01), "emigration"=rbinom(1000, 1, 0.01), "group"=rbinom(1000, 3, 0.3))
+
+flow <- data.frame("tekst"=c("Patients between 1995-2020",
+                              "Exluded due to previous cancer\n",
+                              "Exluded due to emigration\n",
+                              "Total exluded",
+                              "Total included in study",
+                              "Group 0",
+                              "Group 1",
+                              "Group 2",
+                              "Group 3"))
+
+flow$n[1] <- nrow(cohort)
+flow$n[2] <- nrow(cohort[cohort$pre_cancer==1,])
+flow$n[3] <- nrow(cohort[cohort$emigration==1,])
+flow$n[4] <- flow$n[2] + flow$n[3]
+cohort <- cohort[cohort$pre_cancer==0 & cohort$emigration==0,]
+flow$n[5] <- nrow(cohort)
+flow$n[6] <- nrow(cohort[cohort$group==0,])
+flow$n[7] <- nrow(cohort[cohort$group==1,])
+flow$n[8] <- nrow(cohort[cohort$group==2,])
+flow$n[9] <- nrow(cohort[cohort$group==3,])
+
+
+# Putting n and text in one cell with correct formating and alignment
+
+flow$ntekst <- with(flow, paste0("n = ", format(n, big.mark=",", trim=TRUE), " ",tekst))
+
+# Putting exclusion into one cell
+exclusions <- with(flow, paste0(ntekst[2], ntekst[3], ntekst[4]))
+
+# Removing exclusions from flow data.frame
+flow <- flow[c(1,5:9),]
+
+flowchart <- grViz(diagram="
+      digraph{
+      graph[layout=dot, fontsize=12]
+      
+      #body text for all except exclusions
+      node [shape=box, fixedsize=false, fontname=helvetica]
+      A [label = '@@1-1']
+      B [label = '@@1-2']
+      G0 [label = '@@1-3']
+      G1 [label = '@@1-4']
+      G2 [label = '@@1-5']
+      G3 [label = '@@1-6']
+
+      #body text for exlusions
+      node [shape=box, fixedsize=false, fontname=helvetica]
+      Excl [label = '@@2']
+
+      #Empty cells for invisible points
+      node [style=invis, width=0, height=0]
+      P1 [label ='']
+      P2 [label ='']
+
+      #edge statements in up/down direction
+      A->P1 [arrowhead = none]
+      P1->Excl
+      P1->B
+      B->P2 [arrowhead = none]
+      P2->{G0 G1 G2 G3}
+      
+      #edge statement for vertical edge to exclusions
+      subgraph{
+      rank=same; P1; Excl;
+      }
+      }
+      
+      [1]: flow$ntekst[1:6]
+      [2]: exclusions
+      ")
+flowchart
+```
+*Figure 3. Example flow chart. Dot layout.*
+
+# Exporting
+```{r, eval=FALSE}
+library(htmltools)
+library(DiagrammeRsvg)
+library(rsvg)
+
+#Personal preferred export types: svg  for vector based, png for picture based graphics. Each file type has pros and cons. Don't mind warning message <unknown>:1753848: Invalid asm.js: Function definition doesn't match use
+
+# svg
+flowchart %>%
+    export_svg %>% charToRaw %>% rsvg_svg("graph.svg")
+
+# png 
+flowchart %>%
+    export_svg %>% charToRaw %>% rsvg_png("graph.png")
+
+# pdf
+flowchart %>%
+    export_svg %>% charToRaw %>% rsvg_pdf("graph.pdf")
+
+# html
+save_html(HTML(export_svg(flowchart)), file = "graph.html")
+
+```
+
+
+# Extended reading  
+<https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html>  
+<https://graphviz.org>  
+<https://cran.r-project.org/web/packages/DiagrammeR/index.html>  
+
+
+

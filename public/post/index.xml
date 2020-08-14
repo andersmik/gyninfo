@@ -5,12 +5,254 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Post</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>&amp;copy 2020</copyright><lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>&amp;copy 2020</copyright><lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Post</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Flowcharts</title>
+      <link>/post/flowcharts-using-dot/graphviz/diagrammer/</link>
+      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/post/flowcharts-using-dot/graphviz/diagrammer/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;/rmarkdown-libs/viz/viz.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;/rmarkdown-libs/DiagrammeR-styles/styles.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/grViz-binding/grViz.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;personal-research-subjects&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Personal research subjects&lt;/h1&gt;
+&lt;div id=&#34;htmlwidget-1&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-1&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\ndigraph {\n  graph [layout=circo]\n  \n  node [shape = circle,\n        fontname = Helvetica,\n        style = filled]\n        \na [label = \&#34;AM\&#34;, fillcolor = lightcyan]\nb [label = \&#34;Cardiology/AF\&#34;, fillcolor = azure]\nc [label = \&#34;Ob/gyn\&#34;, fillcolor = linen]\nd [label = \&#34;PhD: Pregnancy loss and long term health\&#34;, fillcolor = mintcream]\ne [label = \&#34;Fetal sex and VTE\&#34;, fillcolor = honeydew]\nf [label = \&#34;The Pill and Autoimmune Disease\&#34;, fillcolor = ivory]\ng [label = \&#34;CPA and benign tumors\&#34;, fillcolor = snow]\nh [label = \&#34;CIP and VTE\&#34;, fillcolor = oldlace]\n  a-&gt;b-&gt;c-&gt;d-&gt;{e f g h}\n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;/div&gt;
+&lt;div id=&#34;flowcharts&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Flowcharts&lt;/h1&gt;
+&lt;p&gt;Flowcharts are used extensively in almost all medical research.&lt;/p&gt;
+&lt;p&gt;&lt;div id=&#34;htmlwidget-2&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-2&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\ndigraph {\n  graph [layout=circo]\n  \n  node [shape = circle,\n        fontname = Helvetica,\n        style = filled]\n        \n  node [fillcolor = honeydew, fixedsize=TRUE, width=2.5]\na [label = \&#34;Flowcharts\&#34;]\n\n  node [fillcolor = ivory, fixedsize=TRUE, width=2.5]\nb [label = \&#34;Inclusion/exlusion criteria\&#34;]\nc [label = \&#34;DAGs\&#34;]\nd [label = \&#34;Qualitative research setup\&#34;]\ne [label = \&#34;Network analysis\&#34;]\nf [label = \&#34;Clinical trial setup\&#34;]\ng [label = \&#34;Explaining physiology\&#34;]\n  a-&gt;{b c d e f g}\n}&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;em&gt;Figure 1. Examples of flowcharts in medical research. Circo layout.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;why-program-a-figure&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Why program a figure?&lt;/h1&gt;
+&lt;div id=&#34;upsides&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Upsides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Figures generated and updated inside your program&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;Vector based&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;Open-source&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;Reproducibility&lt;/li&gt;
+&lt;li&gt;Copy paste&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;downsides&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Downsides&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Steeper learning curve than “point-and-click”&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;Time-consuming for special circumstances&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;using-the-diagrammer-package&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Using the DiagrammeR package&lt;/h1&gt;
+&lt;div id=&#34;syntax&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;Based on DOT programming language and graphViz engine for rendering. Almost 30 years old, but still updated. &lt;code&gt;DiagrammeR&lt;/code&gt; package allows DOT programming and graphViz rendering inside R environment.&lt;/p&gt;
+&lt;p&gt;Central to using the &lt;code&gt;DiagrammeR&lt;/code&gt; package in R is the &lt;code&gt;grViz()&lt;/code&gt; statement. This function expects 3 statements:&lt;br /&gt;
+1. graph statement (optional)&lt;br /&gt;
+2. node statement&lt;br /&gt;
+3. edge statement&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;simple-example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Simple example&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grViz(&amp;quot;
+      digraph{
+      
+      # graph statement
+      graph [layout = dot]
+      
+      #node statement
+      node [shape = box, fixedsize=true, style=filled, fillcolor=honeydew, fontname=helvetica]
+      A; B; C; D; E; F; G
+      
+      #edge statement
+      A-&amp;gt;{B C D E F G}
+      }
+&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;div id=&#34;htmlwidget-3&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-3&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\n      digraph{\n      \n      # graph statement\n      graph [layout = dot]\n      \n      #node statement\n      node [shape = box, fixedsize=true, style=filled, fillcolor=honeydew, fontname=helvetica]\n      A; B; C; D; E; F; G\n      \n      #edge statement\n      A-&gt;{B C D E F G}\n      }\n&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;em&gt;Figure 2. Simple example. DOT layout.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;layout&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Layout&lt;/h2&gt;
+&lt;p&gt;For now, focus on two types
+1. dot (hierarchical)&lt;br /&gt;
+2. circo (circular)
+More exist&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;integration-with-existing-prgoramming&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Integration with existing prgoramming&lt;/h2&gt;
+&lt;p&gt;In R integration is done using footnotes and @@ operator.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;example&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- LETTERS
+
+grViz(diagram = &amp;quot;
+      digraph{
+      
+      # graph statement
+      graph [layout=circo]
+      
+      # node statements
+      node[shape=circle, style=filled, fillcolor=honeydew]
+      A [label = &amp;#39;@@1-1&amp;#39;]
+      B [label = &amp;#39;@@1-2&amp;#39;]
+      C [label = &amp;#39;@@1-3&amp;#39;]
+      D [label = &amp;#39;@@1-4&amp;#39;]
+      E [label = &amp;#39;@@1-5&amp;#39;]
+      F [label = &amp;#39;@@1-6&amp;#39;]
+      G [label = &amp;#39;@@1-7&amp;#39;]
+      
+      node[shape=box, style=filled, fillcolor=lightblue]
+      H [label = &amp;#39;@@1-8&amp;#39;]
+      I [label = &amp;#39;@@1-9&amp;#39;]
+      J [label = &amp;#39;@@1-10&amp;#39;]
+      K [label = &amp;#39;@@1-11&amp;#39;]
+      L [label = &amp;#39;@@1-12&amp;#39;]
+      M [label = &amp;#39;@@1-13&amp;#39;]
+      N [label = &amp;#39;@@1-14&amp;#39;]
+
+      # edge statements
+      {A B C}-&amp;gt;{H I J K N} 
+      G-&amp;gt;{L M N}
+
+      }
+      [1]: LETTERS[1:14]
+      &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;htmlwidget-4&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-4&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\n      digraph{\n      \n      # graph statement\n      graph [layout=circo]\n      \n      # node statements\n      node[shape=circle, style=filled, fillcolor=honeydew]\n      A [label = \&#34;A\&#34;]\n      B [label = \&#34;B\&#34;]\n      C [label = \&#34;C\&#34;]\n      D [label = \&#34;D\&#34;]\n      E [label = \&#34;E\&#34;]\n      F [label = \&#34;F\&#34;]\n      G [label = \&#34;G\&#34;]\n      \n      node[shape=box, style=filled, fillcolor=lightblue]\n      H [label = \&#34;H\&#34;]\n      I [label = \&#34;I\&#34;]\n      J [label = \&#34;J\&#34;]\n      K [label = \&#34;K\&#34;]\n      L [label = \&#34;L\&#34;]\n      M [label = \&#34;M\&#34;]\n      N [label = \&#34;N\&#34;]\n\n      # edge statements\n      {A B C}-&gt;{H I J K N} \n      G-&gt;{L M N}\n\n      }&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;flowchart-example&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Flowchart example&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Body of nodes in flowchart. \n indicates new line
+set.seed(1)
+cohort &amp;lt;- data.frame(&amp;quot;pnr&amp;quot;=1:1000, &amp;quot;pre_cancer&amp;quot;=rbinom(1000, 1, 0.01), &amp;quot;emigration&amp;quot;=rbinom(1000, 1, 0.01), &amp;quot;group&amp;quot;=rbinom(1000, 3, 0.3))
+
+flow &amp;lt;- data.frame(&amp;quot;tekst&amp;quot;=c(&amp;quot;Patients between 1995-2020&amp;quot;,
+                              &amp;quot;Exluded due to previous cancer\n&amp;quot;,
+                              &amp;quot;Exluded due to emigration\n&amp;quot;,
+                              &amp;quot;Total exluded&amp;quot;,
+                              &amp;quot;Total included in study&amp;quot;,
+                              &amp;quot;Group 0&amp;quot;,
+                              &amp;quot;Group 1&amp;quot;,
+                              &amp;quot;Group 2&amp;quot;,
+                              &amp;quot;Group 3&amp;quot;))
+
+flow$n[1] &amp;lt;- nrow(cohort)
+flow$n[2] &amp;lt;- nrow(cohort[cohort$pre_cancer==1,])
+flow$n[3] &amp;lt;- nrow(cohort[cohort$emigration==1,])
+flow$n[4] &amp;lt;- flow$n[2] + flow$n[3]
+cohort &amp;lt;- cohort[cohort$pre_cancer==0 &amp;amp; cohort$emigration==0,]
+flow$n[5] &amp;lt;- nrow(cohort)
+flow$n[6] &amp;lt;- nrow(cohort[cohort$group==0,])
+flow$n[7] &amp;lt;- nrow(cohort[cohort$group==1,])
+flow$n[8] &amp;lt;- nrow(cohort[cohort$group==2,])
+flow$n[9] &amp;lt;- nrow(cohort[cohort$group==3,])
+
+
+# Putting n and text in one cell with correct formating and alignment
+
+flow$ntekst &amp;lt;- with(flow, paste0(&amp;quot;n = &amp;quot;, format(n, big.mark=&amp;quot;,&amp;quot;, trim=TRUE), &amp;quot; &amp;quot;,tekst))
+
+# Putting exclusion into one cell
+exclusions &amp;lt;- with(flow, paste0(ntekst[2], ntekst[3], ntekst[4]))
+
+# Removing exclusions from flow data.frame
+flow &amp;lt;- flow[c(1,5:9),]
+
+flowchart &amp;lt;- grViz(diagram=&amp;quot;
+      digraph{
+      graph[layout=dot, fontsize=12]
+      
+      #body text for all except exclusions
+      node [shape=box, fixedsize=false, fontname=helvetica]
+      A [label = &amp;#39;@@1-1&amp;#39;]
+      B [label = &amp;#39;@@1-2&amp;#39;]
+      G0 [label = &amp;#39;@@1-3&amp;#39;]
+      G1 [label = &amp;#39;@@1-4&amp;#39;]
+      G2 [label = &amp;#39;@@1-5&amp;#39;]
+      G3 [label = &amp;#39;@@1-6&amp;#39;]
+
+      #body text for exlusions
+      node [shape=box, fixedsize=false, fontname=helvetica]
+      Excl [label = &amp;#39;@@2&amp;#39;]
+
+      #Empty cells for invisible points
+      node [style=invis, width=0, height=0]
+      P1 [label =&amp;#39;&amp;#39;]
+      P2 [label =&amp;#39;&amp;#39;]
+
+      #edge statements in up/down direction
+      A-&amp;gt;P1 [arrowhead = none]
+      P1-&amp;gt;Excl
+      P1-&amp;gt;B
+      B-&amp;gt;P2 [arrowhead = none]
+      P2-&amp;gt;{G0 G1 G2 G3}
+      
+      #edge statement for vertical edge to exclusions
+      subgraph{
+      rank=same; P1; Excl;
+      }
+      }
+      
+      [1]: flow$ntekst[1:6]
+      [2]: exclusions
+      &amp;quot;)
+flowchart&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;div id=&#34;htmlwidget-5&#34; style=&#34;width:672px;height:480px;&#34; class=&#34;grViz html-widget&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;application/json&#34; data-for=&#34;htmlwidget-5&#34;&gt;{&#34;x&#34;:{&#34;diagram&#34;:&#34;\n      digraph{\n      graph[layout=dot, fontsize=12]\n      \n      #body text for all except exclusions\n      node [shape=box, fixedsize=false, fontname=helvetica]\n      A [label = \&#34;n = 1,000 Patients between 1995-2020\&#34;]\n      B [label = \&#34;n = 978 Total included in study\&#34;]\n      G0 [label = \&#34;n = 351 Group 0\&#34;]\n      G1 [label = \&#34;n = 417 Group 1\&#34;]\n      G2 [label = \&#34;n = 183 Group 2\&#34;]\n      G3 [label = \&#34;n = 27 Group 3\&#34;]\n\n      #body text for exlusions\n      node [shape=box, fixedsize=false, fontname=helvetica]\n      Excl [label = \&#34;n = 14 Exluded due to previous cancer\nn = 8 Exluded due to emigration\nn = 22 Total exluded\&#34;]\n\n      #Empty cells for invisible points\n      node [style=invis, width=0, height=0]\n      P1 [label =\&#34;\&#34;]\n      P2 [label =\&#34;\&#34;]\n\n      #edge statements in up/down direction\n      A-&gt;P1 [arrowhead = none]\n      P1-&gt;Excl\n      P1-&gt;B\n      B-&gt;P2 [arrowhead = none]\n      P2-&gt;{G0 G1 G2 G3}\n      \n      #edge statement for vertical edge to exclusions\n      subgraph{\n      rank=same; P1; Excl;\n      }\n      }&#34;,&#34;config&#34;:{&#34;engine&#34;:&#34;dot&#34;,&#34;options&#34;:null}},&#34;evals&#34;:[],&#34;jsHooks&#34;:[]}&lt;/script&gt;
+&lt;em&gt;Figure 3. Example flow chart. Dot layout.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exporting&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Exporting&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(htmltools)
+library(DiagrammeRsvg)
+library(rsvg)
+
+#Personal preferred export types: svg  for vector based, png for picture based graphics. Each file type has pros and cons. Don&amp;#39;t mind warning message &amp;lt;unknown&amp;gt;:1753848: Invalid asm.js: Function definition doesn&amp;#39;t match use
+
+# svg
+flowchart %&amp;gt;%
+    export_svg %&amp;gt;% charToRaw %&amp;gt;% rsvg_svg(&amp;quot;graph.svg&amp;quot;)
+
+# png 
+flowchart %&amp;gt;%
+    export_svg %&amp;gt;% charToRaw %&amp;gt;% rsvg_png(&amp;quot;graph.png&amp;quot;)
+
+# pdf
+flowchart %&amp;gt;%
+    export_svg %&amp;gt;% charToRaw %&amp;gt;% rsvg_pdf(&amp;quot;graph.pdf&amp;quot;)
+
+# html
+save_html(HTML(export_svg(flowchart)), file = &amp;quot;graph.html&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;extended-reading&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Extended reading&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html&#34; class=&#34;uri&#34;&gt;https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://graphviz.org&#34; class=&#34;uri&#34;&gt;https://graphviz.org&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://cran.r-project.org/web/packages/DiagrammeR/index.html&#34; class=&#34;uri&#34;&gt;https://cran.r-project.org/web/packages/DiagrammeR/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>AIM</title>
