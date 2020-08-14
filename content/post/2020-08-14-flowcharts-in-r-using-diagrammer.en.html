@@ -3,10 +3,9 @@ title: "Flowcharts"
 author: "Anders Mikkelsen"
 authors: [ami]
 date: '2020-08-14'
-slug: 'Flowcharts using DOT/graphViz/DiagrammeR'
 categories: [R, DiagrammeR, graphViz, DOT]
 tags: [R, DiagrammeR, graphViz, DOT]
-summary: 'Flocharts in R uding DOT/graphViz/Diagrammer'
+summary: 'Flowcharts in R uding DOT/graphViz/Diagrammer'
 image:
   caption: ''
   focal_point: ''
@@ -67,7 +66,10 @@ image:
 </div>
 <div id="simple-example" class="section level2">
 <h2>Simple example</h2>
-<pre class="r"><code>grViz(&quot;
+<pre class="r"><code>#install.packages(&quot;DiagrammeR&quot;)
+library(DiagrammeR)
+
+grViz(&quot;
       digraph{
       
       # graph statement

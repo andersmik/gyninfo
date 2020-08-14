@@ -14,9 +14,9 @@
     
     <item>
       <title>Flowcharts</title>
-      <link>/post/flowcharts-using-dot/graphviz/diagrammer/</link>
+      <link>/post/2020-08-14-flowcharts-in-r-using-diagrammer/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/post/flowcharts-using-dot/graphviz/diagrammer/</guid>
+      <guid>/post/2020-08-14-flowcharts-in-r-using-diagrammer/</guid>
       <description>
 &lt;script src=&#34;/rmarkdown-libs/htmlwidgets/htmlwidgets.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;/rmarkdown-libs/viz/viz.js&#34;&gt;&lt;/script&gt;
@@ -72,7 +72,10 @@
 &lt;/div&gt;
 &lt;div id=&#34;simple-example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Simple example&lt;/h2&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;grViz(&amp;quot;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#install.packages(&amp;quot;DiagrammeR&amp;quot;)
+library(DiagrammeR)
+
+grViz(&amp;quot;
       digraph{
       
       # graph statement

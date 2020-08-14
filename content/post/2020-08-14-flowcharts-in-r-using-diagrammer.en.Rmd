@@ -3,10 +3,9 @@ title: "Flowcharts"
 author: "Anders Mikkelsen"
 authors: [ami]
 date: '2020-08-14'
-slug: 'Flowcharts using DOT/graphViz/DiagrammeR'
 categories: [R, DiagrammeR, graphViz, DOT]
 tags: [R, DiagrammeR, graphViz, DOT]
-summary: 'Flocharts in R uding DOT/graphViz/Diagrammer'
+summary: 'Flowcharts in R uding DOT/graphViz/Diagrammer'
 image:
   caption: ''
   focal_point: ''
@@ -107,6 +106,9 @@ Central to using the `DiagrammeR` package in R is the `grViz()` statement. This 
 
 ## Simple example
 ```{r}
+#install.packages("DiagrammeR")
+library(DiagrammeR)
+
 grViz("
       digraph{
       
