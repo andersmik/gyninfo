@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>Flowcharts</title>
+      <title>Flowcharts using DOT/graphViz/Diagrammer</title>
       <link>/post/2020-08-14-flowcharts-in-r-using-diagrammer/</link>
       <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
       <guid>/post/2020-08-14-flowcharts-in-r-using-diagrammer/</guid>
