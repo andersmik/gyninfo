@@ -17,10 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(DiagrammeR)
 ```
 
-# Personal research subjects
+# 1. Personal research topics
 
 ```{r, echo=FALSE}
-indhold <- c("AM", "Cardiology/AF", "Ob/gyn", "PhD: Pregnancy loss and long term health", "Fetal sex and VTE", "The Pill and Autoimmune Disease", "CPA and benign tumors", "CIP and VTE")
+indhold <- c("AM", "Cardiology/AF", "Ob/gyn", "PhD: Pregnancy loss and\nlong term health", "Fetal sex\nand VTE", "The Pill and\nAutoimmune Disease", "CPA\nand benign tumors", "CIP and VTE")
 
 grViz("
 digraph {
@@ -28,7 +28,7 @@ digraph {
   
   node [shape = circle,
         fontname = Helvetica,
-        style = filled]
+        style = filled, fontsize=20]
         
 a [label = '@@1-1', fillcolor = lightcyan]
 b [label = '@@1-2', fillcolor = azure]
@@ -44,9 +44,9 @@ h [label = '@@1-8', fillcolor = oldlace]
 
 ")
 ```
+</br>
 
-
-# Flowcharts  
+# 2. Flowcharts  
 Flowcharts are used extensively in almost all medical research.  
 
 ```{r, echo=FALSE}
@@ -79,22 +79,44 @@ g [label = '@@1-7']
 ```
 *Figure 1. Examples of flowcharts in medical research. Circo layout.* 
 
-# Why program a figure?  
+</br>
+
+# 3. Why program a figure?  
 
 ## Upsides  
 
-- Figures generated and updated inside your program  
-- Vector based  
-- Open-source  
+- Figures generated and updated inside your program 
 - Reproducibility 
-- Copy paste
+- Output in chosen format  
+- Open-source  
+- Copy-paste
+
+```{r, echo=FALSE}
+grViz("
+digraph D {
+ graph [rankdir=LR]
+ node[style=filled]
+    subgraph cluster_c1 {
+      label = R;
+      Data->Analysis->Report;
+  }
+} 
+")
+```
+*Figure 2. Possible self-documenting work-flow*
 
 ## Downsides  
 
 - Steeper learning curve than "point-and-click"  
 - Time-consuming for special circumstances  
 
-# Using the DiagrammeR package  
+![](https://www.researchgate.net/profile/Yugyoung_Esther_Tak/publication/288832409/figure/fig1/AS:313325461229594@1451714019844/Making-sense-of-GWAS-an-overview-Shown-is-a-flow-chart-of-analytical-and-experimental.png)
+
+<https://www.researchgate.net/figure/Making-sense-of-GWAS-an-overview-Shown-is-a-flow-chart-of-analytical-and-experimental_fig1_288832409>
+
+</br>
+
+# 4. Using the DiagrammeR package  
 
 ## Syntax  
 Based on DOT programming language and graphViz engine for rendering. Almost 30 years old, but still updated. `DiagrammeR` package allows DOT programming and graphViz rendering inside R environment.  
@@ -124,7 +146,7 @@ grViz("
       }
 ")
 ```
-*Figure 2. Simple example. DOT layout.* 
+*Figure 3. Simple example. DOT layout.* 
 
 ## Layout  
 For now, focus on two types
@@ -134,6 +156,13 @@ More exist
 
 ## Integration with existing prgoramming
 In R integration is done using footnotes and @@ operator. 
+
+## Attributes
+![](https://rich-iannone.github.io/DiagrammeR/img/graph-functions/node_attributes_2x.png)
+
+![](https://rich-iannone.github.io/DiagrammeR/img/X11_Color_Names.png)
+
+<https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html>
 
 ## Example
 
@@ -176,7 +205,9 @@ grViz(diagram = "
 
 ```
 
-# Flowchart example  
+</br>
+
+# 5. Flowchart example  
 
 ```{r}
 # Body of nodes in flowchart. \n indicates new line
@@ -255,9 +286,11 @@ flowchart <- grViz(diagram="
       ")
 flowchart
 ```
-*Figure 3. Example flow chart. Dot layout.*
+*Figure 4. Example flow chart. Dot layout.*
 
-# Exporting
+</br>
+
+# 6. Exporting
 ```{r, eval=FALSE}
 library(htmltools)
 library(DiagrammeRsvg)
@@ -287,6 +320,7 @@ save_html(HTML(export_svg(flowchart)), file = "graph.html")
 <https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html>  
 <https://graphviz.org>  
 <https://cran.r-project.org/web/packages/DiagrammeR/index.html>  
+<https://renenyffenegger.ch/notes/tools/Graphviz/examples/index>  
 
 
 
